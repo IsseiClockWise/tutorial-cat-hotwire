@@ -42,7 +42,7 @@ class CatsController < ApplicationController
   # PATCH/PUT /cats/1
   def update
     if @cat.update(cat_params)
-      # 成功時は/cats/:id（つまりcats#show）にリダイレクトする
+      flash.now.notice = "ねこを更新しました。"
     else
       render :edit, status: :unprocessable_entity
     end
